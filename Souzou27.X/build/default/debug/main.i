@@ -11491,16 +11491,29 @@ void setup(void)
 
 }
 
+
 void run(void)
 {
+
     RB4 = 1;
     RB5 = 1;
     RB6 = 0;
+
+
     if(RC1 == 0){
+
         RC3 = 1;
         RC4 = 0;
         while(1){
-            if(RB4 == 0){
+
+            if(RC2 == 1){
+
+                RC3 = 1;
+                RC4 = 1;
+
+                RB7 = 1;
+
+            }else if(RB4 == 0 && RB5 == 1 && RB6 == 0){
 
                 while(RB4 == 0){
                     RC6 = 1;
@@ -11508,7 +11521,8 @@ void run(void)
                     RC6 = 0;
                     _delay((unsigned long)((500)*(4000000/4000.0)));
                 }
-            }else if(RB5 == 0){
+
+            }else if(RB4 == 1 && RB5 == 0 && RB6 == 0){
 
                 while(RB5 == 0){
                     RC0 = 1;
@@ -11516,15 +11530,12 @@ void run(void)
                     RC0 = 0;
                     _delay((unsigned long)((500)*(4000000/4000.0)));
                 }
-            }else if(RB6 == 1){
+
+            }else if(RB4 == 1 && RB5 == 1 && RB6 == 1){
+
 
                 RC3 = 0;
                 RC4 = 1;
-            }
-            if(RC2 == 0){
-                RC3 = 1;
-                RC4 = 1;
-                RB7 = 1;
             }
         }
     }

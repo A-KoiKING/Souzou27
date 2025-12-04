@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F18346 ]
 [d frameptr 6 ]
-"12 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\adc.c
+"12 C:\Users\81707\Desktop\Souzou27\Souzou27.X\adc.c
 [e E6668 . `ui
 ADC_MAXCH 20
 ADC_DISABLE 255
@@ -52,7 +52,7 @@ PIN18_RA1 18
 PIN19_RA0 19
 PIN20_VSS 20
 ]
-"9 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\input.c
+"9 C:\Users\81707\Desktop\Souzou27\Souzou27.X\input.c
 [e E7052 . `uc
 OUTPUT 0
 INPUT 1
@@ -70,7 +70,7 @@ ICSPCLK 12
 ICSPDAT 13
 VSS 14
 ]
-"64 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pwm.c
+"64 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pwm.c
 [e E7052 . `uc
 OUTPUT 0
 INPUT 1
@@ -96,7 +96,7 @@ PWM_ENABLE 1
 PWM_DEFAULT_PERIOD 15000
 PWM_DEFAULT_WIDTH 5000
 ]
-"17 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\uart.c
+"17 C:\Users\81707\Desktop\Souzou27\Souzou27.X\uart.c
 [e E7043 . `uc
 TX_DISABLE 0
 TX_ENABLE 1
@@ -121,7 +121,7 @@ ICSPCLK 12
 ICSPDAT 13
 VSS 14
 ]
-"9 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pps.c
+"9 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pps.c
 [e E7052 . `uc
 OUTPUT 0
 INPUT 1
@@ -139,7 +139,7 @@ ICSPCLK 12
 ICSPDAT 13
 VSS 14
 ]
-"7 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pin.c
+"7 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pin.c
 [e E7068 . `uc
 PIN01_VDD 1
 PIN02_RA5 2
@@ -179,7 +179,7 @@ ICSPCLK 12
 ICSPDAT 13
 VSS 14
 ]
-"15 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\main.c
+"15 C:\Users\81707\Desktop\Souzou27\Souzou27.X\main.c
 [e E7068 . `uc
 PIN01_VDD 1
 PIN02_RA5 2
@@ -219,7 +219,7 @@ ICSPCLK 12
 ICSPDAT 13
 VSS 14
 ]
-"10 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\adc.c
+"10 C:\Users\81707\Desktop\Souzou27\Souzou27.X\adc.c
 [v _adc_isr adc_isr `(v  1 e 1 0 ]
 "38
 [v _init_adc init_adc `(v  1 e 1 0 ]
@@ -247,29 +247,29 @@ VSS 14
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"3 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\input.c
+"3 C:\Users\81707\Desktop\Souzou27\Souzou27.X\input.c
 [v _init_input init_input `(v  1 e 1 0 ]
-"3 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\main.c
+"3 C:\Users\81707\Desktop\Souzou27\Souzou27.X\main.c
 [v _setup setup `(v  1 e 1 0 ]
 "33
 [v _run run `(v  1 e 1 0 ]
-"8 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\mainloop.c
+"8 C:\Users\81707\Desktop\Souzou27\Souzou27.X\mainloop.c
 [v _main main `(v  1 e 1 0 ]
 "15
 [v _isr isr `II(v  1 e 1 0 ]
 "23
 [v _init init `(v  1 e 1 0 ]
-"5 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pin.c
+"5 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pin.c
 [v _init_pinMode init_pinMode `(v  1 e 1 0 ]
 "30
 [v _pinMode pinMode `(v  1 e 1 0 ]
 "42
 [v _get_pinMode get_pinMode `(uc  1 e 1 0 ]
-"6 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pps.c
+"6 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pps.c
 [v _set_outputpps set_outputpps `(v  1 e 1 0 ]
 "39
 [v _set_inputpps set_inputpps `(v  1 e 1 0 ]
-"8 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pwm.c
+"8 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pwm.c
 [v _init_ccp1 init_ccp1 `(v  1 e 1 0 ]
 "15
 [v _init_ccp2 init_ccp2 `(v  1 e 1 0 ]
@@ -297,13 +297,13 @@ VSS 14
 [v _pwm3 pwm3 `(v  1 e 1 0 ]
 "148
 [v _pwm4 pwm4 `(v  1 e 1 0 ]
-"7 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\uart.c
+"7 C:\Users\81707\Desktop\Souzou27\Souzou27.X\uart.c
 [v _init_uart init_uart `(v  1 e 1 0 ]
 "81
 [v _putch putch `(v  1 e 1 0 ]
 "92
 [v _getch getch `(i  1 e 2 0 ]
-"3 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\adc.c
+"3 C:\Users\81707\Desktop\Souzou27\Souzou27.X\adc.c
 [v _adc_status adc_status `VEuc  1 e 1 0 ]
 "4
 [v _adc_value adc_value `VE[21]us  1 e 42 0 ]
@@ -695,9 +695,9 @@ VSS 14
 [v _flags flags `uc  1 s 1 flags ]
 "185
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
-"3 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pin.c
+"3 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pin.c
 [v _pin_mode pin_mode `[21]uc  1 e 21 0 ]
-"3 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pwm.c
+"3 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pwm.c
 [v _pwm_status pwm_status `[5]uc  1 e 5 0 ]
 "4
 [v _pwm_timer2 pwm_timer2 `uc  1 e 1 0 ]
@@ -705,31 +705,31 @@ VSS 14
 [v _pwm_timer4 pwm_timer4 `uc  1 e 1 0 ]
 "6
 [v _pwm_timer6 pwm_timer6 `uc  1 e 1 0 ]
-"3 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\uart.c
+"3 C:\Users\81707\Desktop\Souzou27\Souzou27.X\uart.c
 [v _tx_status tx_status `uc  1 e 1 0 ]
 "4
 [v _rx_status rx_status `uc  1 e 1 0 ]
-"8 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\mainloop.c
+"8 C:\Users\81707\Desktop\Souzou27\Souzou27.X\mainloop.c
 [v _main main `(v  1 e 1 0 ]
 {
 "13
 } 0
-"33 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\main.c
+"33 C:\Users\81707\Desktop\Souzou27\Souzou27.X\main.c
 [v _run run `(v  1 e 1 0 ]
 {
-"72
+"81
 } 0
-"23 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\mainloop.c
+"23 C:\Users\81707\Desktop\Souzou27\Souzou27.X\mainloop.c
 [v _init init `(v  1 e 1 0 ]
 {
 "47
 } 0
-"3 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\main.c
+"3 C:\Users\81707\Desktop\Souzou27\Souzou27.X\main.c
 [v _setup setup `(v  1 e 1 0 ]
 {
 "30
 } 0
-"30 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pin.c
+"30 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pin.c
 [v _pinMode pinMode `(v  1 e 1 0 ]
 {
 [v pinMode@pinno pinno `DCuc  1 p 1 wreg ]
@@ -739,7 +739,7 @@ VSS 14
 [v pinMode@pinno pinno `DCuc  1 p 1 2 ]
 "40
 } 1
-"7 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\uart.c
+"7 C:\Users\81707\Desktop\Souzou27\Souzou27.X\uart.c
 [v _init_uart init_uart `(v  1 e 1 0 ]
 {
 "15
@@ -758,7 +758,7 @@ VSS 14
 [v init_uart@num num `uc  1 a 1 40 ]
 "78
 } 0
-"39 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pps.c
+"39 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pps.c
 [v _set_inputpps set_inputpps `(v  1 e 1 0 ]
 {
 [v set_inputpps@mode mode `DCuc  1 p 1 wreg ]
@@ -773,12 +773,12 @@ VSS 14
 [v set_inputpps@mode mode `DCuc  1 p 1 4 ]
 "69
 } 1
-"92 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\uart.c
+"92 C:\Users\81707\Desktop\Souzou27\Souzou27.X\uart.c
 [v _getch getch `(i  1 e 2 0 ]
 {
 "107
 } 0
-"108 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pwm.c
+"108 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pwm.c
 [v _init_pwm init_pwm `(v  1 e 1 0 ]
 {
 "110
@@ -868,7 +868,7 @@ VSS 14
 {
 "42
 } 0
-"6 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pps.c
+"6 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pps.c
 [v _set_outputpps set_outputpps `(v  1 e 1 0 ]
 {
 [v set_outputpps@mode mode `DCuc  1 p 1 wreg ]
@@ -883,7 +883,7 @@ VSS 14
 [v set_outputpps@mode mode `DCuc  1 p 1 4 ]
 "35
 } 1
-"29 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pwm.c
+"29 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pwm.c
 [v _init_ccp4 init_ccp4 `(v  1 e 1 0 ]
 {
 [v init_ccp4@tsel tsel `DCuc  1 p 1 wreg ]
@@ -919,12 +919,12 @@ VSS 14
 [v init_ccp1@tsel tsel `DCuc  1 p 1 1 ]
 "13
 } 1
-"5 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pin.c
+"5 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pin.c
 [v _init_pinMode init_pinMode `(v  1 e 1 0 ]
 {
 "28
 } 0
-"3 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\input.c
+"3 C:\Users\81707\Desktop\Souzou27\Souzou27.X\input.c
 [v _init_input init_input `(v  1 e 1 0 ]
 {
 "7
@@ -937,7 +937,7 @@ VSS 14
 [v init_input@num num `uc  1 a 1 40 ]
 "32
 } 0
-"38 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\adc.c
+"38 C:\Users\81707\Desktop\Souzou27\Souzou27.X\adc.c
 [v _init_adc init_adc `(v  1 e 1 0 ]
 {
 "47
@@ -1002,7 +1002,7 @@ VSS 14
 [v fputc@fp fp `*.2S1565  1 p 2 4 ]
 "24
 } 0
-"81 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\uart.c
+"81 C:\Users\81707\Desktop\Souzou27\Souzou27.X\uart.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 p 1 wreg ]
@@ -1041,7 +1041,7 @@ VSS 14
 [v ___awdiv@dividend dividend `i  1 p 2 3 ]
 "41
 } 0
-"42 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\pin.c
+"42 C:\Users\81707\Desktop\Souzou27\Souzou27.X\pin.c
 [v _get_pinMode get_pinMode `(uc  1 e 1 0 ]
 {
 [v get_pinMode@mode mode `DCuc  1 p 1 wreg ]
@@ -1056,12 +1056,12 @@ VSS 14
 [v get_pinMode@mode mode `DCuc  1 p 1 5 ]
 "70
 } 1
-"15 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\mainloop.c
+"15 C:\Users\81707\Desktop\Souzou27\Souzou27.X\mainloop.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
 "21
 } 0
-"10 C:\Users\81707\Desktop\template_16f18346-main\Souzou27.X\adc.c
+"10 C:\Users\81707\Desktop\Souzou27\Souzou27.X\adc.c
 [v _adc_isr adc_isr `(v  1 e 1 0 ]
 {
 "36

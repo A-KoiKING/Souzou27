@@ -45,14 +45,15 @@ void run(void)
         while(1){
             //壁を見つけたとき
             if(RC2 == 1){
-                // モータ制御
+                //モータ制御
                 RC3 = 1;
                 RC4 = 1;
-                // ブレーキランプ
+                //ブレーキランプ
                 RB7 = 1;
             //左折
             }else if(RB4 == 0 && RB5 == 1 && RB6 == 0){
                 //PWM4();
+                //左ウィンカー
                 while(RB4 == 0){
                     RC6 = 1;
                     __delay_ms(500);
@@ -62,6 +63,7 @@ void run(void)
             //右折
             }else if(RB4 == 1 && RB5 == 0 && RB6 == 0){
                 //PWM4();
+                //右ウィンカー
                 while(RB5 == 0){
                     RC0 = 1;
                     __delay_ms(500);
@@ -71,6 +73,7 @@ void run(void)
             //後退
             }else if(RB4 == 1 && RB5 == 1 && RB6 == 1){
                 //PWM1();
+                //モータ制御
                 RC3 = 0;
                 RC4 = 1;
             }

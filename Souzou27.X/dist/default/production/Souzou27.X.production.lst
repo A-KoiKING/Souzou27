@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.10 build 20250813170317 
-                                                                                               Thu Nov 27 15:32:50 2025
+                                                                                               Thu Dec  4 13:35:44 2025
 
 Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1 
      1                           	processor	16F18346
@@ -4449,17 +4449,17 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4425                           ; Regs used in _run: [wreg]
   4426                           
   4427                           
-  4428                           ;main.c: 35:     RB4 = 1;
+  4428                           ;main.c: 36:     RB4 = 1;
   4429     0704  0020               	movlb	0	; select bank0
   4430     0705  160D               	bsf	13,4	;volatile
   4431                           
-  4432                           ;main.c: 36:     RB5 = 1;
+  4432                           ;main.c: 37:     RB5 = 1;
   4433     0706  168D               	bsf	13,5	;volatile
   4434                           
-  4435                           ;main.c: 37:     RB6 = 0;
+  4435                           ;main.c: 38:     RB6 = 0;
   4436     0707  130D               	bcf	13,6	;volatile
   4437                           
-  4438                           ;main.c: 38:     if(RC1 == 0){
+  4438                           ;main.c: 41:     if(RC1 == 0){
   4439     0708  188E               	btfsc	14,1	;volatile
   4440     0709  2F0B               	goto	u1601
   4441     070A  2F0C               	goto	u1600
@@ -4468,16 +4468,16 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4444     070C                     u1600:
   4445     070C                     l2104:
   4446                           
-  4447                           ;main.c: 39:         RC3 = 1;
+  4447                           ;main.c: 43:         RC3 = 1;
   4448     070C  158E               	bsf	14,3	;volatile
   4449                           
-  4450                           ;main.c: 40:         RC4 = 0;
+  4450                           ;main.c: 44:         RC4 = 0;
   4451     070D  120E               	bcf	14,4	;volatile
   4452     070E                     l497:	
-  4453                           ;main.c: 41:         while(1){
+  4453                           ;main.c: 45:         while(1){
   4454                           
   4455                           
-  4456                           ;main.c: 42:             if(RC2 == 1){
+  4456                           ;main.c: 47:             if(RC2 == 1){
   4457     070E  1D0E               	btfss	14,2	;volatile
   4458     070F  2F11               	goto	u1611
   4459     0710  2F12               	goto	u1610
@@ -4486,16 +4486,16 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4462     0712                     u1610:
   4463     0712                     l2106:
   4464                           
-  4465                           ;main.c: 44:                 RC3 = 1;
+  4465                           ;main.c: 49:                 RC3 = 1;
   4466     0712  158E               	bsf	14,3	;volatile
   4467                           
-  4468                           ;main.c: 45:                 RC4 = 1;
+  4468                           ;main.c: 50:                 RC4 = 1;
   4469     0713  160E               	bsf	14,4	;volatile
   4470                           
-  4471                           ;main.c: 47:                 RB7 = 1;
+  4471                           ;main.c: 52:                 RB7 = 1;
   4472     0714  178D               	bsf	13,7	;volatile
   4473                           
-  4474                           ;main.c: 48:             }else if(RB4 == 0 && RB5 == 1 && RB6 == 0){
+  4474                           ;main.c: 54:             }else if(RB4 == 0 && RB5 == 1 && RB6 == 0){
   4475     0715  2F0E               	goto	l497
   4476     0716                     l498:
   4477     0716  1A0D               	btfsc	13,4	;volatile
@@ -4521,11 +4521,11 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4497     0722  2F3C               	goto	l2118
   4498     0723                     l502:
   4499                           
-  4500                           ;main.c: 51:                     RC6 = 1;
+  4500                           ;main.c: 57:                     RC6 = 1;
   4501     0723  170E               	bsf	14,6	;volatile
   4502     0724                     l2114:
   4503                           
-  4504                           ;main.c: 52:                     _delay((unsigned long)((500)*(4000000/4000.0)));
+  4504                           ;main.c: 58:                     _delay((unsigned long)((500)*(4000000/4000.0)));
   4505     0724  3003               	movlw	3
   4506     0725  00F2               	movwf	??_run+1
   4507     0726  308A               	movlw	138
@@ -4540,11 +4540,11 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4516     072E  2F29               	goto	u3347
   4517     072F                     l2116:
   4518                           
-  4519                           ;main.c: 53:                     RC6 = 0;
+  4519                           ;main.c: 59:                     RC6 = 0;
   4520     072F  0020               	movlb	0	; select bank0
   4521     0730  130E               	bcf	14,6	;volatile
   4522                           
-  4523                           ;main.c: 54:                     _delay((unsigned long)((500)*(4000000/4000.0)));
+  4523                           ;main.c: 60:                     _delay((unsigned long)((500)*(4000000/4000.0)));
   4524     0731  3003               	movlw	3
   4525     0732  00F2               	movwf	??_run+1
   4526     0733  308A               	movlw	138
@@ -4559,7 +4559,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4535     073B  2F36               	goto	u3357
   4536     073C                     l2118:
   4537                           
-  4538                           ;main.c: 50:                 while(RB4 == 0){
+  4538                           ;main.c: 56:                 while(RB4 == 0){
   4539     073C  0020               	movlb	0	; select bank0
   4540     073D  1E0D               	btfss	13,4	;volatile
   4541     073E  2F40               	goto	u1651
@@ -4592,11 +4592,11 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4568     074E  2F68               	goto	l2130
   4569     074F                     l507:
   4570                           
-  4571                           ;main.c: 59:                     RC0 = 1;
+  4571                           ;main.c: 66:                     RC0 = 1;
   4572     074F  140E               	bsf	14,0	;volatile
   4573     0750                     l2126:
   4574                           
-  4575                           ;main.c: 60:                     _delay((unsigned long)((500)*(4000000/4000.0)));
+  4575                           ;main.c: 67:                     _delay((unsigned long)((500)*(4000000/4000.0)));
   4576     0750  3003               	movlw	3
   4577     0751  00F2               	movwf	??_run+1
   4578     0752  308A               	movlw	138
@@ -4611,11 +4611,11 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4587     075A  2F55               	goto	u3367
   4588     075B                     l2128:
   4589                           
-  4590                           ;main.c: 61:                     RC0 = 0;
+  4590                           ;main.c: 68:                     RC0 = 0;
   4591     075B  0020               	movlb	0	; select bank0
   4592     075C  100E               	bcf	14,0	;volatile
   4593                           
-  4594                           ;main.c: 62:                     _delay((unsigned long)((500)*(4000000/4000.0)));
+  4594                           ;main.c: 69:                     _delay((unsigned long)((500)*(4000000/4000.0)));
   4595     075D  3003               	movlw	3
   4596     075E  00F2               	movwf	??_run+1
   4597     075F  308A               	movlw	138
@@ -4630,7 +4630,7 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4606     0767  2F62               	goto	u3377
   4607     0768                     l2130:
   4608                           
-  4609                           ;main.c: 58:                 while(RB5 == 0){
+  4609                           ;main.c: 65:                 while(RB5 == 0){
   4610     0768  0020               	movlb	0	; select bank0
   4611     0769  1E8D               	btfss	13,5	;volatile
   4612     076A  2F6C               	goto	u1691
@@ -4662,10 +4662,10 @@ Microchip MPLAB XC8 C Compiler v3.10 (Free license) build 20250813170317 Og1
   4638     077A                     u1720:
   4639     077A                     l2136:
   4640                           
-  4641                           ;main.c: 66:                 RC3 = 0;
+  4641                           ;main.c: 75:                 RC3 = 0;
   4642     077A  118E               	bcf	14,3	;volatile
   4643                           
-  4644                           ;main.c: 67:                 RC4 = 1;
+  4644                           ;main.c: 76:                 RC4 = 1;
   4645     077B  160E               	bsf	14,4	;volatile
   4646     077C  2F0E               	goto	l497
   4647     077D                     l513:
@@ -11408,7 +11408,7 @@ DATA                 0      0     237      0.0%
 
 
 Microchip Technology PIC Macro Assembler V3.10 build 20250813170317 
-Symbol Table                                                                                   Thu Nov 27 15:32:50 2025
+Symbol Table                                                                                   Thu Dec  4 13:35:44 2025
 
                      l57 0068                       l58 01FC                       l94 0703  
            ___awdiv@sign 0076                      l214 0F48                      l206 0F2B  
