@@ -33,14 +33,11 @@ void setup(void)
 
 
 void run(void) 
-{
-    //ラインセンサ初期化
-    RB4 = 1;
-    RB5 = 1;
-    RB6 = 0;
-    
+{   
     //ボタンチェック
     if(RC1 == 0){
+        //ブレーキランプOFF
+        RB7 = 0;
         while(1){
             //モータ初期化(前進)
             //pwm1();
@@ -51,7 +48,7 @@ void run(void)
                 //モータ制御(ブレーキ)
                 RC3 = 1;
                 RC4 = 1;
-                //ブレーキランプ
+                //ブレーキランプON
                 RB7 = 1;
                 break;
             //左折
@@ -59,7 +56,7 @@ void run(void)
                 //サーボ左
                 Servo(-30);
                 //左ウィンカー
-                while(RB4 == 0){
+                while(RB4 == 0 && RC2 == 0){
                     RC6 = 1;
                     __delay_ms(500);
                     RC6 = 0;
@@ -70,7 +67,7 @@ void run(void)
                 //サーボ右
                 Servo(30);
                 //右ウィンカー
-                while(RB5 == 0){
+                while(RB5 == 0 && RC2 == 0){
                     RC0 = 1;
                     __delay_ms(500);
                     RC0 = 0;
@@ -92,7 +89,7 @@ void run(void)
 void Servo(float angle)
 {
     if(angle < -90 || angle > 90) return;
-    int value = 1500 + angle * 100 / 9;
+    int value = (int)(1500 + angle * 100 / 9.0f);
     pwm4(20000,(unsigned short)value);
     return;
 }
