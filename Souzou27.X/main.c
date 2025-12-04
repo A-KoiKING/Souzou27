@@ -87,6 +87,12 @@ void run(void)
 }
 
 
+void Servo(int angle)
+{
+    pwm4(20000,1500+(angle/0.09));
+}
+
+
 /*
 //測距センサ＆ブレーキランプ
 void run(void)
