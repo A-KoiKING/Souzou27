@@ -89,7 +89,10 @@ void run(void)
 
 void Servo(int angle)
 {
-    pwm4(20000,1500+(angle/0.09));
+    if(angle <= -91 || angle >= 91) return;
+    float value = 1500+(angle/0.09);
+    pwm4(20000,value);
+    return;
 }
 
 
