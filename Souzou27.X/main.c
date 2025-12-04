@@ -52,7 +52,7 @@ void run(void)
                 RB7 = 1;
             //左折
             }else if(RB4 == 0 && RB5 == 1 && RB6 == 0){
-                //PWM4();
+                pwm4(20000,500);
                 //左ウィンカー
                 while(RB4 == 0){
                     RC6 = 1;
@@ -62,7 +62,7 @@ void run(void)
                 }
             //右折
             }else if(RB4 == 1 && RB5 == 0 && RB6 == 0){
-                //PWM4();
+                pwm4(20000,2500);
                 //右ウィンカー
                 while(RB5 == 0){
                     RC0 = 1;
@@ -72,7 +72,7 @@ void run(void)
                 }
             //後退
             }else if(RB4 == 1 && RB5 == 1 && RB6 == 1){
-                //PWM1();
+                pwm1();
                 //モータ制御
                 RC3 = 0;
                 RC4 = 1;
@@ -103,18 +103,17 @@ void run(void)
 //サーボ＆スタートボタン
 void run(void)
 {
+    RA4 = 1;
     while(1)
     {
         if(RC1 == 0)
         {
             pwm4(20000,500);
-            RA4 = 1;
             RB7 = 1;
         }
         else
         {
             pwm4(20000,2500);
-            RA4 = 1;
             RB7 = 0;
         }
     }
