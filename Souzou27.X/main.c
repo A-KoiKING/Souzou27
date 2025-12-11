@@ -31,11 +31,11 @@ void setup(void)
     // (補足) OUTPUT はデフォルト動作なので省略可能
 }
 
-
 void run(void) 
 {   
     //ボタンチェック
     if(RC1 == 0){
+        Servo(0);
         //ブレーキランプOFF
         RB7 = 0;
         while(1){
@@ -43,6 +43,7 @@ void run(void)
             pwm1(100,1);
             RC3 = 1;
             RC4 = 0;
+            Servo(0);
             //壁を見つけたとき
             if(RC2 == 1){
                 //モータ制御(ブレーキ)
@@ -50,6 +51,7 @@ void run(void)
                 RC4 = 1;
                 //ブレーキランプON
                 RB7 = 1;
+                Servo(80);
                 break;
             //左折
             }else if(RB4 == 0 && RB5 == 1 && RB6 == 0){
@@ -75,23 +77,24 @@ void run(void)
                 }
             //後退
             }else if(RB4 == 1 && RB5 == 1 && RB6 == 1){
-                //モータ制御(後退)
-                pwm1(100,1);
-                RC3 = 0;
-                RC4 = 1;
+                while(RB4 == 1 && RB5 == 1 && RB6 == 1){
+                    //モータ制御(後退)
+                    pwm1(100,1);
+                    RC3 = 0;
+                    RC4 = 1;
+                }
             }
         }
     }
     return;
 }
 
-
 void Servo(float angle)
 {
     if(angle < -90 || angle > 90) return;
     int value = (int)(1500 + angle * 100 / 9.0f);
     pwm4(20000,(unsigned short)value);
-    return;
+    return; 
 }
 
 
