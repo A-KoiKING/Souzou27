@@ -60,7 +60,7 @@ void run(void)
             //左折 RNC2 < 特定の数字 
             }else if(RB4 == 0 && RB5 == 1 && RB6 == 0){
                 //サーボ左
-                Servo(-30);
+                Servo(-10);
                 //左ウィンカー
                 while(RB4 == 0 && RC2 == 0){
                     RC6 = 1;
@@ -71,7 +71,7 @@ void run(void)
             //右折
             }else if(RB4 == 1 && RB5 == 0 && RB6 == 0){
                 //サーボ右
-                Servo(30);
+                Servo(10);
                 //右ウィンカー
                 while(RB5 == 0 && RC2 == 0){
                     RC0 = 1;
