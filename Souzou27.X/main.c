@@ -41,10 +41,10 @@ void run(void)
         RB7 = 0;
         while(1){
             //モータ初期化(前進)
-            pwm1(1000,1);
+            pwm1(110,1);
             //前進
-            RC3 = 1;
-            RC4 = 0;
+            RC3 = 0;
+            RC4 = 1;
             //サーボ角度リセット
             Servo(0);
             //壁を見つけたとき RNC2 > 特定の数字
@@ -83,9 +83,9 @@ void run(void)
             }else if(RB4 == 1 && RB5 == 1 && RB6 == 1){
                 while(RB4 == 1 && RB5 == 1 && RB6 == 1){
                     //モータ制御(後退)
-                    pwm1(1000,1);
-                    RC3 = 0;
-                    RC4 = 1;
+                    pwm1(110,1);
+                    RC3 = 1;
+                    RC4 = 0;
                 }
             }
         }
@@ -101,6 +101,33 @@ void Servo(float angle)
     return; 
 }
 
+/*
+//ラインセンサ確認コード
+void run(void){
+    Servo(0);
+    //右
+    if(RB4 == 1){
+        RC0 = 1;
+    }
+    else{
+        RC0 = 0;
+    }
+    //左
+    if(RB5 == 1){
+        RC6 = 1;
+    }
+    else{
+        RC6 = 0;
+    }
+    //中央
+    if(RB6 == 1){
+        RC7 = 1;
+    }
+    else{
+        RC7 = 0;
+    }
+}
+*/
 
 /*
 //測距センサ＆ブレーキランプ
