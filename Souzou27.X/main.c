@@ -21,34 +21,41 @@ void setup(void)
     pinMode(PIN08_RC6,OUTPUT); //ウィンカー左
     pinMode(PIN09_RC7,OUTPUT); //LED（元ブザー）
     pinMode(PIN10_RB7,OUTPUT); //LED（ブレーキランプ）
-    pinMode(PIN11_RB6,INPUT);  //ラインセンサ
+    pinMode(PIN11_RB6,INPUT);  //ラインセンサ後
     pinMode(PIN12_RB5,INPUT);  //ラインセンサ
     pinMode(PIN13_RB4,INPUT);  //ラインセンサ
-    pinMode(PIN14_RC2,INPUT);  //測距センサ
+    pinMode(PIN14_RC2,ADC);  //測距センサ
     pinMode(PIN15_RC1,INPUT_PULLUP); //スタートスイッチ
     pinMode(PIN16_RC0,OUTPUT); //ウィンカー右
     // (補足) ピン番号を使って pinMode(16,OUTPUT); とすることも可能
     // (補足) OUTPUT はデフォルト動作なので省略可能
+    
+    // INT割り込み設定
+    // 引数1: ISRのアドレス
+    // 引数2: 割り込みを行うタイミング
+    //        0 をセットすると立ち下がり(High→Low)
+    //        1 をセットすると立ち上がり(Low→High)
 }
 
 void run(void) 
 {   
+    int PreSta = 0;
+    
     //ボタンチェック
     if(RC1 == 0){
         //サーボ角度リセット
         Servo(0);
         //ブレーキランプOFF
         RB7 = 0;
+        //モータ初期化(前進)
+        pwm1(16000,12000);
+        //前進
+        RC3 = 0;
+        RC4 = 1;
+        PreSta = 0;
         while(1){
-            //モータ初期化(前進)
-            pwm1(110,1);
-            //前進
-            RC3 = 0;
-            RC4 = 1;
-            //サーボ角度リセット
-            Servo(0);
-            //壁を見つけたとき RNC2 > 特定の数字
-            if(RC2 == 1){
+            //壁を見つけたとき
+            if(ANC2 >= 700){
                 //モータ制御(ブレーキ)
                 RC3 = 1;
                 RC4 = 1;
@@ -57,36 +64,98 @@ void run(void)
                 //サーボ角度リセット
                 Servo(0);
                 break;
-            //左折 RNC2 < 特定の数字 
+            //前進
+            }else if(RB4 == 0 && RB5 == 0 && RB6 == 0){
+                //サーボ前
+                Servo(0);
+                //前進
+                RC3 = 0;
+                RC4 = 1;
+                
+                PreSta = 0;
+            //左折
             }else if(RB4 == 0 && RB5 == 1 && RB6 == 0){
                 //サーボ左
-                Servo(-20);
-                //左ウィンカー
-                while(RB4 == 0 && RC2 == 0){
-                    RC6 = 1;
-                    __delay_ms(500);
-                    RC6 = 0;
-                    __delay_ms(500);
-                }
+                Servo(20);
+                //前進
+                RC3 = 0;
+                RC4 = 1;
+                
+                PreSta = 1;
+//                //左ウィンカー
+//                while(RB4 == 0 && RC2 == 0){
+//                    RC6 = 1;
+//                    __delay_ms(500);
+//                    RC6 = 0;
+//                    __delay_ms(500);
+//                }
+            //大きく左折
+            }else if(RB4 == 0 && RB5 == 1 && RB6 == 1){
+                //サーボ左
+                Servo(25);
+                //前進
+                RC3 = 0;
+                RC4 = 1;
+                PreSta = 1;
+//                //左ウィンカー
+//                while(RB4 == 0 && RC2 == 0){
+//                    RC6 = 1;
+//                    __delay_ms(500);
+//                    RC6 = 0;
+//                    __delay_ms(500);
+//                }
             //右折
             }else if(RB4 == 1 && RB5 == 0 && RB6 == 0){
                 //サーボ右
-                Servo(20);
+                Servo(-20);
+                //前進
+                RC3 = 0;
+                RC4 = 1;
+                      
+                PreSta = 2;
                 //右ウィンカー
-                while(RB5 == 0 && RC2 == 0){
-                    RC0 = 1;
-                    __delay_ms(500);
-                    RC0 = 0;
-                    __delay_ms(500);
-                }
+//                while(RB5 == 0 && RC2 == 0){
+//                    RC0 = 1;
+//                    __delay_ms(500);
+//                    RC0 = 0;
+//                    __delay_ms(500);
+//                }
+            //大きく右折
+            }else if(RB4 == 1 && RB5 == 0 && RB6 == 1){
+                //サーボ右
+                Servo(-25);
+                //前進
+                RC3 = 0;
+                RC4 = 1;
+                
+                PreSta = 2;
+                //右ウィンカー
+//                while(RB4 == 0 && RC2 == 0){
+//                    RC6 = 1;
+//                    __delay_ms(500);
+//                    RC6 = 0;
+//                    __delay_ms(500);
+//                }
             //後退
             }else if(RB4 == 1 && RB5 == 1 && RB6 == 1){
-                while(RB4 == 1 && RB5 == 1 && RB6 == 1){
-                    //モータ制御(後退)
-                    pwm1(110,1);
-                    RC3 = 1;
-                    RC4 = 0;
-                }
+                //モータ制御(後退)
+                RC3 = 1;
+                RC4 = 0;
+                Servo(0);
+                __delay_ms(300);
+                do{
+                    switch(PreSta){
+                        case 0:
+                            break;
+                        case 1:
+                            Servo(-15);
+                            break;
+                        case 2:
+                            Servo(15);
+                            break;
+                    }
+                    __delay_ms(500);
+                }while(RB4 == 1 && RB5 == 1 && RB6 == 1);
             }
         }
     }
