@@ -115,7 +115,7 @@ void run(void)
             //左折
             }else if(RB4 == 0 && RB5 == 1 && RB6 == 0){
                 //サーボ左
-                Servo(20);
+                Servo(25);
                 //前進
                 RC3 = 0;
                 RC4 = 1;
@@ -127,7 +127,7 @@ void run(void)
             //大きく左折
             }else if(RB4 == 0 && RB5 == 1 && RB6 == 1){
                 //サーボ左
-                Servo(27);
+                Servo(30);
                 //前進
                 RC3 = 0;
                 RC4 = 1;
@@ -139,7 +139,7 @@ void run(void)
             //右折
             }else if(RB4 == 1 && RB5 == 0 && RB6 == 0){
                 //サーボ右
-                Servo(-20);
+                Servo(-25);
                 //前進
                 RC3 = 0;
                 RC4 = 1;
@@ -151,7 +151,7 @@ void run(void)
             //大きく右折
             }else if(RB4 == 1 && RB5 == 0 && RB6 == 1){
                 //サーボ右
-                Servo(-27);
+                Servo(-30);
                 //前進
                 RC3 = 0;
                 RC4 = 1;
@@ -165,6 +165,8 @@ void run(void)
                 //モータ制御(後退)
                 RC3 = 1;
                 RC4 = 0;
+//                //モータ後進
+//                pwm1(16000,10000);
                 do{
                     switch(PreSta){
                         case 0:
@@ -173,13 +175,13 @@ void run(void)
                             RC6 = 0;                            
                             break;
                         case 1:
-                            Servo(-5);
+                            Servo(-20);
                             //左ウィンカー
                             RC0 = 0;
                             RC6 = 1;
                             break;
                         case 2:
-                            Servo(5);
+                            Servo(20);
                             //右ウィンカー
                             RC0 = 1;
                             RC6 = 0;
@@ -187,6 +189,8 @@ void run(void)
                     }
                     __delay_ms(500);
                 }while(RB4 == 1 && RB5 == 1 && RB6 == 1);
+//                //モータ速度(前進)
+//                pwm1(16000,14000);
             }
         }
     }
