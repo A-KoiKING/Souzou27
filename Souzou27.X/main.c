@@ -45,10 +45,32 @@ void setup(void)
 
 void run(void) 
 {   
-    int PreSta = 0;
+    //右
+    if(RB4 == 1){
+        RC0 = 1;
+    }
+    else{
+        RC0 = 0;
+    }
+    //左
+    if(RB5 == 1){
+        RC6 = 1;
+    }
+    else{
+        RC6 = 0;
+    }
+    //中央
+    if(RB6 == 1){
+        RB7 = 1;
+    }
+    else{
+        RB7 = 0;
+    }
     
     //ボタンチェック
     if(RC1 == 0){
+        //角度保存
+        int PreSta = 0;
         //サーボ角度リセット
         Servo(0);
         //ブレーキランプOFF
@@ -57,7 +79,7 @@ void run(void)
         RC0 = 0;
         RC6 = 0;
         //モータ初期化(前進)
-        pwm1(16000,12000);
+        pwm1(16000,14000);
         //前進
         RC3 = 0;
         RC4 = 1;
@@ -105,7 +127,7 @@ void run(void)
             //大きく左折
             }else if(RB4 == 0 && RB5 == 1 && RB6 == 1){
                 //サーボ左
-                Servo(25);
+                Servo(27);
                 //前進
                 RC3 = 0;
                 RC4 = 1;
@@ -129,7 +151,7 @@ void run(void)
             //大きく右折
             }else if(RB4 == 1 && RB5 == 0 && RB6 == 1){
                 //サーボ右
-                Servo(-25);
+                Servo(-27);
                 //前進
                 RC3 = 0;
                 RC4 = 1;
@@ -151,19 +173,19 @@ void run(void)
                             RC6 = 0;                            
                             break;
                         case 1:
-                            Servo(-15);
-                            //右ウィンカー
-                            RC0 = 1;
-                            RC6 = 0;
-                            break;
-                        case 2:
-                            Servo(15);
+                            Servo(-5);
                             //左ウィンカー
                             RC0 = 0;
                             RC6 = 1;
                             break;
+                        case 2:
+                            Servo(5);
+                            //右ウィンカー
+                            RC0 = 1;
+                            RC6 = 0;
+                            break;
                     }
-                    __delay_ms(700);
+                    __delay_ms(500);
                 }while(RB4 == 1 && RB5 == 1 && RB6 == 1);
             }
         }
